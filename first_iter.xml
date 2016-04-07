@@ -1,0 +1,30 @@
+<tool id="first_iter" name="Perform first iteration">
+    <command interpreter="python">
+        first_iter.py
+        ## Query order
+            --query="${query}"
+            --out='${output1}'
+    </command>
+
+    <inputs>
+        <param name="query" type="text" format="text" label="Input cmd" help="User written order" />
+    </inputs>
+
+    <outputs>
+        <data format="table" name="output1" label="Result_test" />
+    </outputs>
+
+    <tests>
+      <test>
+      </test>
+      <test>
+      </test>
+      <test>
+      </test>
+    </tests>
+    <help>
+  **Help**
+
+  Input an order to the shell.
+    </help>
+</tool>
