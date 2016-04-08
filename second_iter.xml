@@ -1,0 +1,33 @@
+<tool id="Seond_iteration" name="Perform second draft">
+    <command interpreter="python">
+        second_iter.py
+            ## Order given by the user
+            --order="${orders.order}"
+            #if $orders.order == "ls"
+                ## Give a directory
+                --dir="${orders.directory}"
+            #end if
+            ## Arguments given by the user
+            --args="${arguments}"
+
+            ## Output file
+            --out="${output1}"
+    </command>
+
+    <inputs>
+        <conditional name="orders">
+            <param name="order" type="select" label="Select an order">
+                <option value="ls">ls</option>
+                <option value="df">df</option>
+            </param>
+            <when value="ls">
+                <param name="directory" type="text" format="text" label="Choose the directory"/>
+            </when>
+        </conditional>
+        <param name="arguments" type="text" format="text" label="Enter the arguments"/>
+    </inputs>
+
+    <outputs>
+        <data format="table" name="output1" label="Result_test1" />
+    </outputs>
+</tool>
