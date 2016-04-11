@@ -1,0 +1,29 @@
+<tool id="Third_iteration" name="Perform third draft">
+    <command interpreter="python">
+        third_iter.py
+            ## Give a directory
+            --dir="${directory}"
+            ## Arguments given by the user
+            --args="${arguments}"
+
+            ## Output file
+            --out="${output1}"
+    </command>
+
+    <help>
+        The order is ls always.
+    </help>
+
+    <inputs>
+        <param name="arguments" type="select" display="checkboxes" multiple="True" label="Enter the arguments">
+            <option value="l">l</option>
+            <option value="h">h</option>
+            <option value="g">g</option>
+        </param>
+        <param name="directory" type="text" format="text" label="Choose the directory"/>
+    </inputs>
+
+    <outputs>
+        <data format="table" name="output1" label="Result_test1" />
+    </outputs>
+</tool>
