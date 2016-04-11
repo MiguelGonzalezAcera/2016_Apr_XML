@@ -25,11 +25,8 @@ def __main__():
 
     arguments = "".join(options.args.split(","))
 
-    print(options.dir)
-    print(options.dir.startswith(";"))
-
     if options.dir.startswith(";") or options.dir.startswith("|"):
-        warning('You cant input more orders')
+        warning('You cant input ')
     elif not options.dir.startswith("/"):
         warning('Input not valid')
     else:
